@@ -28,11 +28,11 @@ void menu(){
 	setlocale(LC_ALL, "Portuguese");
 	
 	printf("                              ---------------------------------------\n");
-    printf("                              ------- Aventura em três mundos -------\n");
+    printf("                              ------- Aventura em trÃªs mundos -------\n");
 	printf("                              ---------------------------------------\n");
-    slow_print(" Aqui você encontrara belos desafios, desafiando sua sabedoria e astucia, além de sua sorte\n", 50);
-    slow_print(" será que você consegue encarar este mundo cheio de aventuras?\n", 50);
-    slow_print(" Tudo pode acontecer... a partir daí cabe a você decidir a aventura que deseja prosseguir!\n\n", 50);
+    slow_print(" Aqui vocÃª encontrara belos desafios, desafiando sua sabedoria e astucia, alÃ©m de sua sorte\n", 50);
+    slow_print(" serÃ¡ que vocÃª consegue encarar este mundo cheio de aventuras?\n", 50);
+    slow_print(" Tudo pode acontecer... a partir daÃ­ cabe a vocÃª decidir a aventura que deseja prosseguir!\n\n", 50);
     
     slow_print("1. Perguntas e respostas \n",50);
     slow_print("2. Cobra na Caixa \n",50);
@@ -40,12 +40,12 @@ void menu(){
     slow_print("4. Sair \n",50);
     char jogo1 = '1', jogo2 = '2', jogo3 = '3', sair = '4';
     char player;
-    printf(" Qual opção voçê deseja selecionar? ",50);
+    printf(" Qual opÃ§Ã£o voÃ§Ãª deseja selecionar? ",50);
     scanf(" %c", &player);
     if(player == jogo1){
     	
-    	slow_print(" Este é um jogo de Perguntas gerais, para saber seu conhecimento raso de mundo\n",50);
-    	slow_print(" Vamos começar?\n",50);
+    	slow_print(" Este Ã© um jogo de Perguntas gerais, para saber seu conhecimento raso de mundo\n",50);
+    	slow_print(" Vamos comeÃ§ar?\n",50);
     	char claro = '1';
     	char selecont;
     	printf(" Digite um valor valido.\n");
@@ -61,8 +61,8 @@ fflush(stdin);
 
     }else if(player == jogo2){
     	
-    	slow_print(" Este é um jogo de sorte ou azar... ou você consegue o botão ou será morto por uma terrivel cobra\n",50);// texto do jogo
-    	printf(" Vamos começar?\n");
+    	slow_print(" Este Ã© um jogo de sorte ou azar... ou vocÃª consegue o botÃ£o ou serÃ¡ morto por uma terrivel cobra\n",50);// texto do jogo
+    	printf(" Vamos comeÃ§ar?\n");
     	char claro = '1';
     	char selecont;
     	printf(" Digite um valor valido.\n");
@@ -78,10 +78,10 @@ fflush(stdin);
     		
 	}else if(player == jogo3){
 		
-		slow_print(" Nas terras de Liima, as pessoas usam Gousmas para lutar entre si, dóceis... mas que quando são\n", 50);
-		slow_print(" atacadas ficam furiosas, além de poder se dividir, elas acabam por quando ficam muito furiosas se desintregam.\n", 50);
-		slow_print(" Então chame seu amigo e venha confrontalo neste jogo insano! \n",50);
-    	printf(" Vamos começar?\n");
+		slow_print(" Nas terras de Liima, as pessoas usam Gousmas para lutar entre si, dÃ³ceis... mas que quando sÃ£o\n", 50);
+		slow_print(" atacadas ficam furiosas, alÃ©m de poder se dividir, elas acabam por quando ficam muito furiosas se desintregam.\n", 50);
+		slow_print(" EntÃ£o chame seu amigo e venha confrontalo neste jogo insano! \n",50);
+    	printf(" Vamos comeÃ§ar?\n");
     	char claro = '1';
     	char selecont;
     	printf(" Digite um valor valido.\n");
@@ -162,7 +162,7 @@ int repet;
     }
     printf("--------------------------------------------------------------------------------------------------------------\n");
     printf("                               QUARTA PERGUNTA\n\n");
-    slow_print("                    Quais o menor e o maior país do mundo?\n",100);
+    slow_print("                    Quais o menor e o maior paÃ­s do mundo?\n",100);
     slow_print("a) Nauru e China\n",50);
     slow_print("b) Sao Marino e India\n",50);
     slow_print("c) Monaco e Canada\n",50);
@@ -178,7 +178,7 @@ int repet;
 	}
 	printf("--------------------------------------------------------------------------------------------------------------\n");
 	printf("                               QUINTA PERGUNTA\n\n");
-    slow_print("                    Quantas casas decimais tem o número pi?\n",100);
+    slow_print("                    Quantas casas decimais tem o nÃºmero pi?\n",100);
     slow_print("a) Duas\n",50);
     slow_print("b) Infinitas\n",50);
     slow_print("c) Centenas\n",50);
@@ -224,7 +224,7 @@ int repet;
 		char jogador1[50], jogador2[50];
     	int caixaAberta[5] = {0, 0, 0, 0, 0};
     	int cobra, botao, escolha, jogoTerminou, jogadores;
-    	int i; // declaração movida para cá
+    	int i; // declaraÃ§Ã£o movida para cÃ¡
 	
 		//esquema inicial do jogo
 		fflush(stdin);
@@ -238,9 +238,9 @@ int repet;
 
 		// turno aleatorio dos jogadores
 		srand(time(NULL)); // gera numero aleatorio a partir do time null(que conta a partir de uma certa hora de um certo momento)
-    	jogadores = rand() % 2; // gera um número aleatório entre 1 e 2
+    	jogadores = rand() % 2; // gera um nÃºmero aleatÃ³rio entre 1 e 2
     	
-		// troca a caixa do botão enquanto for igual a caixa da cobra
+		// troca a caixa do botÃ£o enquanto for igual a caixa da cobra
     	srand(time(NULL));
     	cobra = rand() % 5;
     		do {
@@ -250,10 +250,10 @@ int repet;
    		// Iniciar o jogo
    		jogoTerminou = 0;
 			while (!jogoTerminou) {
-        	// Exibir as caixas disponíveis
+        	// Exibir as caixas disponÃ­veis
         		printf("\n%s, escolha uma caixa (1-5): ", jogadores == 0 ? jogador1 : jogador2);
         
-				for (i = 0; i < 5; i++) { // variável i usada aqui
+				for (i = 0; i < 5; i++) { // variÃ¡vel i usada aqui
            		 		if (caixaAberta[i]) {
                 		printf(" x ");
             			} 
@@ -265,26 +265,26 @@ int repet;
 
         		// Ler a escolha do jogador
 				scanf("%d", &escolha);
-        		escolha--;  // Converter para índice de 0 a 4
+        		escolha--;  // Converter para Ã­ndice de 0 a 4
 
-        		// Verificar se a escolha é válida
+        		// Verificar se a escolha Ã© vÃ¡lida
         		if (escolha < 0 || escolha > 4 || caixaAberta[escolha]) {
-            	printf("Voce já escolheu essa caixa, escolha outra. \n");
+            	printf("Voce jÃ¡ escolheu essa caixa, escolha outra. \n");
            		 continue;
         		}
 
         		// Abrir a caixa escolhida
        			 caixaAberta[escolha] = 1;
         		if (escolha == cobra) {
-            			printf("Você abriu a caixa %d e encontrou uma cobra! GAME OVER.\n", escolha+1);
+            			printf("VocÃª abriu a caixa %d e encontrou uma cobra! GAME OVER.\n", escolha+1);
             			jogoTerminou = 1;
             			} 
 				else if (escolha == botao) {
-            		printf("Você abriu a caixa %d e encontrou o botão! VOCÊ GANHOU!\n", escolha+1);
+            		printf("VocÃª abriu a caixa %d e encontrou o botÃ£o! VOCÃŠ GANHOU!\n", escolha+1);
             		jogoTerminou = 1;
     			} 
 				else {
-            		printf("Você abriu a caixa %d e não encontrou nada. Escolha outra caixa.\n", escolha+1);
+            		printf("VocÃª abriu a caixa %d e nÃ£o encontrou nada. Escolha outra caixa.\n", escolha+1);
         			}
         		if(!jogoTerminou){
         			jogadores = jogadores == 0 ? 1:0;  	
@@ -337,17 +337,17 @@ void gousmasWar(){
 		
 	if(aleatoriedade == 0)
 	{	 
-		printf("\nJogador %s começa atacando. \n \n ", jogador1);
+		printf("\nJogador %s comeÃ§a atacando. \n \n ", jogador1);
 	}
 	else
 	{
-		printf("\nJogador %s começa atacando. \n \n ", jogador2);
+		printf("\nJogador %s comeÃ§a atacando. \n \n ", jogador2);
 		strcpy(temp, jogador1);
 
 	// copiar valor de jogador2 para jogador1
 		strcpy(jogador1, jogador2);
 
-	// copiar valor da variável temporária para jogador2
+	// copiar valor da variÃ¡vel temporÃ¡ria para jogador2
 		strcpy(jogador2, temp);
     }
 		 
@@ -356,7 +356,7 @@ void gousmasWar(){
 		char escolha; 
 
 	printf("%s x %s", jogador1,jogador2);	
-	printf("\nA partida começa, que o melhor vença!\n");
+	printf("\nA partida comeÃ§a, que o melhor venÃ§a!\n");
 		
 	while((furiaA > 0 || furiaB > 0) && (furiaC > 0 || furiaD > 0))
 	{	
@@ -370,14 +370,14 @@ void gousmasWar(){
 		
 		if(escolha == 'a' || escolha == 'A')
 		{
-			printf("\nEscolha a Gousma que performará o ataque: \n");
+			printf("\nEscolha a Gousma que performarÃ¡ o ataque: \n");
 			printf(" (a)Gousma A   OU   (b)Gousma B \n");
 			fflush(stdin);
 			scanf("%c", &escolha);
 			
 			if(escolha == 'a' || escolha == 'A')
 			{
-				printf("\nEscolha o alvo que sofrerá o ataque: \n");
+				printf("\nEscolha o alvo que sofrerÃ¡ o ataque: \n");
 				printf("\n (a)gousma C   OU   (b)gousma D \n");
 				fflush(stdin);
 				scanf("%c", &escolha);
@@ -385,30 +385,30 @@ void gousmasWar(){
 				{
 					furiaC = furiaC + furiaA;
 					printf("\n A Gousma A ataca a Gousma C de forma violenta. \n");
-					printf("\n A fúria da Gousma C sobe para %d. \n", furiaC);
+					printf("\n A fÃºria da Gousma C sobe para %d. \n", furiaC);
 				}
 				else if(escolha == 'b' || escolha == 'B')
 				{
 					furiaD = furiaD + furiaA;
 					printf("\n A Gousma A ataca a Gousma D de forma violenta. \n");
-					printf("\n A fúria da Gousma D sobe para %d. \n", furiaD);
+					printf("\n A fÃºria da Gousma D sobe para %d. \n", furiaD);
 				}
 				else
 				{
-					printf("\nComando Inválido! Digite novamente, mas um comando válido.\n");
+					printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido.\n");
 					continue;	
 				}
 				if(furiaC > 5)
 				{
 					furiaC = 0;
-					printf("\nA fúria da Gousma C ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma C ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
 				if(furiaD > 5)
 				{
 					furiaD = 0;
-					printf("\nA fúria da Gousma D ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma D ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);			
+				printf("\nFÃºria de A: %d, FÃºria de B: %d, FÃºria de C %d, FÃºria de D: %d\n", furiaA, furiaB, furiaC, furiaD);			
 			}
 			else if(escolha == 'b' || escolha == 'B')
 			{
@@ -430,24 +430,24 @@ void gousmasWar(){
 				}
 				else
 				{
-					printf("\nComando Inválido! Digite novamente, mas um comando válido.\n");
+					printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido.\n");
 					continue;	
 				}
 				if(furiaC > 5)
 				{
 					furiaC = 0;
-					printf("\nA fúria da Gousma C ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma C ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
 				if(furiaD > 5)
 				{
 					furiaD = 0;
-					printf("\nA fúria da Gousma D ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma D ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+				printf("\nFÃºria de A: %d, FÃºria de B: %d, FÃºria de C %d, FÃºria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
 			}
 			else
 			{
-				printf("\nComando Inválido! Digite novamente, mas um comando válido.\n");
+				printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido.\n");
 				continue;
 			}
 			
@@ -464,7 +464,7 @@ void gousmasWar(){
 				if(furiaA == 0 && furiaB >= 2)
 				{
 					int newFuriaA;
-					printf("\nDigite quanto de fúria será passada para ressucitar a Gousma A:\n");
+					printf("\nDigite quanto de fÃºria serÃ¡ passada para ressucitar a Gousma A:\n");
 					scanf("%d", &newFuriaA);
 					if(newFuriaA >= furiaB)
 					{
@@ -479,7 +479,7 @@ void gousmasWar(){
 				else if(furiaB == 0 && furiaA >= 2)
 				{
 					int newFuriaB;
-					printf("\nDigite quanto de fúria será passada para ressucitar a Gousma B:\n");
+					printf("\nDigite quanto de fÃºria serÃ¡ passada para ressucitar a Gousma B:\n");
 					scanf("%d", &newFuriaB);
 					if(newFuriaB >= furiaA)
 					{
@@ -491,18 +491,18 @@ void gousmasWar(){
 					furiaB = furiaB + newFuriaB;
 					}
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+				printf("\nFÃºria de A: %d, FÃºria de B: %d, FÃºria de C %d, FÃºria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
 			}
 			else if (furiaA > 0 || furiaB > 0 )
 			{
-				printf("\nnenhuma Gousma está morta! Digite novamente, mas um comando válido\n");
+				printf("\nnenhuma Gousma estÃ¡ morta! Digite novamente, mas um comando vÃ¡lido\n");
 				escolha = 'c';
 			}
 		}
 		
 		else
 		{
-			printf("\nComando Inválido! Digite novamente, mas um comando válido\n");
+			printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido\n");
 			continue;
 	 	}
 	 	
@@ -515,7 +515,7 @@ void gousmasWar(){
 		break;
 		}
 		
-		printf("\nJogador %s, faça seu movimento\n", jogador2);
+		printf("\nJogador %s, faÃ§a seu movimento\n", jogador2);
 		
 		do{
 		printf("\n(a)atacar   OU   (b)dividir: \n ");
@@ -524,14 +524,14 @@ void gousmasWar(){
 		
 		if(escolha == 'a' || escolha == 'A')
 		{
-			printf("\nEscolha a Gousma que performará o ataque: \n");
+			printf("\nEscolha a Gousma que performarÃ¡ o ataque: \n");
 			printf(" (a)Gousma C   OU   (b)Gousma D \n");
 			fflush(stdin);
 			scanf("%c", &escolha);
 			
 			if(escolha == 'a' || escolha == 'A')
 			{
-				printf("\nEscolha o alvo que sofrerá o ataque: \n");
+				printf("\nEscolha o alvo que sofrerÃ¡ o ataque: \n");
 				printf("\n (a)gousma A   OU   (b)gousma B \n");
 				fflush(stdin);
 				scanf("%c", &escolha);
@@ -539,30 +539,30 @@ void gousmasWar(){
 				{
 					furiaA = furiaA + furiaC;
 					printf("\n A Gousma C ataca a Gousma A de forma violenta \n");
-					printf("\n A fúria da Gousma A sobe para %d \n", furiaA);
+					printf("\n A fÃºria da Gousma A sobe para %d \n", furiaA);
 				}
 				else if(escolha == 'b' || escolha == 'B')
 				{
 					furiaB = furiaB + furiaC;
 					printf("\n A Gousma C ataca a Gousma B de forma violenta \n");
-					printf("\n A fúria da Gousma B sobe para %d \n", furiaB);
+					printf("\n A fÃºria da Gousma B sobe para %d \n", furiaB);
 				}
 				else
 				{
-					printf("\nComando Inválido! Digite novamente, mas um comando válido\n");
+					printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido\n");
 					continue;	
 				}
 				if(furiaA > 5)
 				{
 					furiaA = 0;
-					printf("\nA fúria da Gousma A ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma A ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
 				if(furiaB > 5)
 				{
 					furiaB = 0;
-					printf("\nA fúria da Gousma B ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma B ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+				printf("\nFÃºria de A: %d, FÃºria de B: %d, FÃºria de C %d, FÃºria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
 			}
 			else if(escolha == 'b' || escolha == 'B')
 			{
@@ -584,24 +584,24 @@ void gousmasWar(){
 				}
 				else
 				{
-					printf("\nComando Inválido! Digite novamente, mas um comando válido\n");
+					printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido\n");
 					continue;	
 				}
 				if(furiaA > 5)
 				{
 					furiaA = 0;
-					printf("\nA fúria da Gousma A ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma A ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
 				if(furiaB > 5)
 				{
 					furiaB = 0;
-					printf("\nA fúria da Gousma B ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
+					printf("\nA fÃºria da Gousma B ultrapassou o limite, portanto ela se desintegrou de tanta fÃºria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+				printf("\nFÃºria de A: %d, FÃºria de B: %d, FÃºria de C %d, FÃºria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
 			}
 			else
 			{
-				printf("\nComando Inválido! Digite novamente, mas um comando válido\n");
+				printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido\n");
 				continue;
 			}
 		}
@@ -613,7 +613,7 @@ void gousmasWar(){
 				if(furiaC == 0 && furiaD >= 2)
 				{
 					int newFuriaC;
-					printf("\nDigite quanto de fúria será passada para ressucitar a Gousma C:\n");
+					printf("\nDigite quanto de fÃºria serÃ¡ passada para ressucitar a Gousma C:\n");
 					scanf("%d", &newFuriaC);
 					if(newFuriaC >= furiaD)
 					{
@@ -628,7 +628,7 @@ void gousmasWar(){
 				else if(furiaD == 0 && furiaC >= 2)
 				{
 					int newFuriaD;
-					printf("\nDigite quanto de fúria será passada para ressucitar a Gousma D:\n");
+					printf("\nDigite quanto de fÃºria serÃ¡ passada para ressucitar a Gousma D:\n");
 					scanf("%d", &newFuriaD);
 					if(newFuriaD >= furiaC)
 					{
@@ -640,18 +640,18 @@ void gousmasWar(){
 					furiaD = furiaD + newFuriaD;
 					}
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+				printf("\nFÃºria de A: %d, FÃºria de B: %d, FÃºria de C %d, FÃºria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
 			}
 			else if (furiaC > 0 || furiaD > 0 )
 			{
-				printf("\nnenhuma Gousma está morta! Digite novamente, mas um comando válido\n");
+				printf("\nnenhuma Gousma estÃ¡ morta! Digite novamente, mas um comando vÃ¡lido\n");
 				escolha = 'c';
 			}
 		}
 		
 		else
 		{
-			printf("\nComando Inválido! Digite novamente, mas um comando válido\n");
+			printf("\nComando InvÃ¡lido! Digite novamente, mas um comando vÃ¡lido\n");
 			continue;
 		}
 		
@@ -660,11 +660,11 @@ void gousmasWar(){
 	
 	if(furiaA == 0 && furiaB ==0)
 	{
-		printf("\nParabéns %s suas gousmas foram as vencedoras!\n", jogador2);
+		printf("\nParabÃ©ns %s suas gousmas foram as vencedoras!\n", jogador2);
 	}
 	else if(furiaC == 0 && furiaD == 0)
 	{
-		printf("\nParabéns %s suas gousmas foram as vencedoras!\n", jogador1);
+		printf("\nParabÃ©ns %s suas gousmas foram as vencedoras!\n", jogador1);
 	}
 	
 	int escolhaFinal = 0;
