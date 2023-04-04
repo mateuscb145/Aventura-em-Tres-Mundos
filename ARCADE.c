@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <locale.h>
 #include <time.h>
 
@@ -14,7 +13,7 @@ void slow_print(char* str, int delay) {
 for (i = 0; str[i] != '\0'; i++) {
     putchar(str[i]);
     fflush(stdout);
-    usleep(delay * 700);
+    usleep(delay * 600);
 }
 }
 
@@ -200,25 +199,25 @@ int repet;
     	fflush(stdin);
     
     	if (escolhaFinal == 2) {
-    		system("cls");
     		printf("voltando para o menu\n\n");
+    		system("cls");
     		menu();
 		}
 		else if (escolhaFinal == 1)	{
-			system("cls");
 			printf("Reiniciando o jogo\n\n");
+			system("cls");
     		perguntasERespostas();
 		}
 		else{
-			system("cls");
 			printf("Digite um valor valido.\n\n");
 			printf("voltando para o menu\n\n");
+			system("cls");
     		menu();
 		}
 	
 }
 
-	void jogoDaCobra(){
+void jogoDaCobra(){
 		
 	printf("                        ---------------------------------------\n");
     printf("                        -------- JOGO da Cobra na Caixa -------\n");
@@ -227,7 +226,7 @@ int repet;
 		char jogador1[50], jogador2[50];
     	int caixaAberta[5] = {0, 0, 0, 0, 0};
     	int cobra, botao, escolha, jogoTerminou, jogadores;
-    	int i; // declaração movida para cá
+    	int i;
 	
 		//esquema inicial do jogo
 		fflush(stdin);
@@ -238,24 +237,22 @@ int repet;
     	printf("Nome do jogador: \n");
 		gets(jogador2);
     	printf("jogador confirmado, %s \n", jogador2);
-
-		// turno aleatorio dos jogadores
 		srand(time(NULL)); // gera numero aleatorio a partir do time null(que conta a partir de uma certa hora de um certo momento)
     	jogadores = rand() % 2; // gera um número aleatório entre 1 e 2
-    	
-		// troca a caixa do botão enquanto for igual a caixa da cobra
     	srand(time(NULL));
     	cobra = rand() % 5;
     		do {
       			botao = rand() % 5;
     		}while (botao == cobra);
 
-   		// Iniciar o jogo
+   		// loop do jogo principal
    		jogoTerminou = 0;
 			while (!jogoTerminou) {
-        	// Exibir as caixas disponíveis
-        		printf("\n%s, escolha uma caixa (1-5): ", jogadores == 0 ? jogador1 : jogador2);
-        
+				if (jogadores == 0) {
+    			printf("\n%s, escolha uma caixa (1-5): ", jogador1);
+				} else {
+    			printf("\n%s, escolha uma caixa (1-5): ", jogador2);
+				}
 				for (i = 0; i < 5; i++) { // variável i usada aqui
            		 		if (caixaAberta[i]) {
                 		printf(" x ");
@@ -265,18 +262,15 @@ int repet;
            	 			}
        	 			}
         		printf("\n");
-
-        		// Ler a escolha do jogador
 				scanf("%d", &escolha);
         		escolha--;  // Converter para índice de 0 a 4
-
-        		// Verificar se a escolha é válida
-        		if (escolha < 0 || escolha > 4 || caixaAberta[escolha]) {
-            	printf("Voce já escolheu essa caixa, escolha outra. \n");
-           		 continue;
-        		}
-
-        		// Abrir a caixa escolhida
+        		if (escolha < 0 || escolha > 4) {
+    				printf("Valor inválido, escolha outra caixa. \n");
+    				continue;
+				} else if (caixaAberta[escolha]) {
+    				printf("Você já escolheu essa caixa, escolha outra. \n");
+    				continue;
+				}
        			 caixaAberta[escolha] = 1;
         		if (escolha == cobra) {
             			printf("Você abriu a caixa %d e encontrou uma cobra! GAME OVER.\n", escolha+1);
@@ -289,31 +283,28 @@ int repet;
 				else {
             		printf("Você abriu a caixa %d e não encontrou nada. Escolha outra caixa.\n", escolha+1);
         			}
-        		if(!jogoTerminou){
-        			jogadores = jogadores == 0 ? 1:0;  	
-					}
+        		jogadores = !jogadores;
 			}
-   
 		int escolhaFinal = 0;
     	fflush(stdin);
-    	printf(" escolha 1 para continuar a jogar. Escolha 2 para ir para o menu:  ");
+    	printf("escolha 1 para continuar a jogar ou Escolha 2 para ir para o menu:  ");
     	scanf("%d", &escolhaFinal);
     	fflush(stdin);
     
     	if (escolhaFinal == 2) {
+    		printf("voltando para o menu\n\n");
     		system("cls");
-    		printf(" voltando para o menu\n\n");
     		menu();
 		}
 		else if (escolhaFinal == 1)	{
+			printf("Reiniciando o jogo\n\n");
 			system("cls");
-			printf(" Reiniciando o jogo\n\n");
     		jogoDaCobra();
 		}
 		else{
+			printf("Digite um valor valido.\n\n");
+			printf("voltando para o menu\n\n");
 			system("cls");
-			printf(" Digite um valor valido.\n\n");
-			printf(" voltando para o menu\n\n");
     		menu();
 		}
     
@@ -343,11 +334,12 @@ void gousmasWar(){
 		
 	if(aleatoriedade == 0)
 	{	 
-		printf("\nJogador %s começa atacando. \n \n ", jogador1);
+		printf("\nJogador %s começa atacando. \n  ", jogador1);
 	}
 	else
 	{
-		printf("\nJogador %s começa atacando. \n \n ", jogador2);
+		printf("\nJogador %s começa atacando. \n  ", jogador2);
+		
 		strcpy(temp, jogador1);
 
 	// copiar valor de jogador2 para jogador1
@@ -358,10 +350,8 @@ void gousmasWar(){
     }
 		 
 		int furiaA = 1, furiaB = 1, furiaC = 1, furiaD = 1;
-		int flag = 0;
 		char escolha; 
 
-	printf("%s x %s", jogador1,jogador2);	
 	printf("\nA partida começa, que o melhor vença!\n");
 		
 	while((furiaA > 0 || furiaB > 0) && (furiaC > 0 || furiaD > 0))
@@ -414,7 +404,9 @@ void gousmasWar(){
 					furiaD = 0;
 					printf("\nA fúria da Gousma D ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);			
+					printf("\nFúria de A: %d       Fúria de C: %d" ,furiaA, furiaC);
+					printf("\n                X                ");
+					printf("\nFúria de B: %d       Fúria de D: %d\n", furiaB, furiaD);			
 			}
 			else if(escolha == 'b' || escolha == 'B')
 			{
@@ -449,7 +441,9 @@ void gousmasWar(){
 					furiaD = 0;
 					printf("\nA fúria da Gousma D ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+					printf("\nFúria de A: %d       Fúria de C: %d" ,furiaA, furiaC);
+					printf("\n                X                ");
+					printf("\nFúria de B: %d       Fúria de D: %d\n", furiaB, furiaD);
 			}
 			else
 			{
@@ -497,7 +491,9 @@ void gousmasWar(){
 					furiaB = furiaB + newFuriaB;
 					}
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+					printf("\nFúria de A: %d       Fúria de C: %d" ,furiaA, furiaC);
+					printf("\n                X                ");
+					printf("\nFúria de B: %d       Fúria de D: %d\n", furiaB, furiaD);
 			}
 			else if (furiaA > 0 || furiaB > 0 )
 			{
@@ -568,7 +564,9 @@ void gousmasWar(){
 					furiaB = 0;
 					printf("\nA fúria da Gousma B ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+					printf("\nFúria de A: %d       Fúria de C: %d" ,furiaA, furiaC);
+					printf("\n                X                ");
+					printf("\nFúria de B: %d       Fúria de D: %d\n", furiaB, furiaD);
 			}
 			else if(escolha == 'b' || escolha == 'B')
 			{
@@ -603,8 +601,9 @@ void gousmasWar(){
 					furiaB = 0;
 					printf("\nA fúria da Gousma B ultrapassou o limite, portanto ela se desintegrou de tanta fúria!\n");
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
-			}
+					printf("\nFúria de A: %d       Fúria de C: %d" ,furiaA, furiaC);
+					printf("\n                X                ");
+					printf("\nFúria de B: %d       Fúria de D: %d\n", furiaB, furiaD);			}
 			else
 			{
 				printf("\nComando Inválido! Digite novamente, mas um comando válido\n");
@@ -646,7 +645,9 @@ void gousmasWar(){
 					furiaD = furiaD + newFuriaD;
 					}
 				}
-				printf("\nFúria de A: %d, Fúria de B: %d, Fúria de C %d, Fúria de D: %d\n", furiaA, furiaB, furiaC, furiaD);
+					printf("\nFúria de A: %d       Fúria de C: %d" ,furiaA, furiaC);
+					printf("\n                X                ");
+					printf("\nFúria de B: %d       Fúria de D: %d\n", furiaB, furiaD);
 			}
 			else if (furiaC > 0 || furiaD > 0 )
 			{
@@ -675,24 +676,24 @@ void gousmasWar(){
 	
 	int escolhaFinal = 0;
     	fflush(stdin);
-    	printf(" escolha 1 para continuar a jogar. Escolha 2 para ir para o menu:  ");
+    	printf("escolha 1 para continuar a jogar ou Escolha 2 para ir para o menu:  ");
     	scanf("%d", &escolhaFinal);
     	fflush(stdin);
     
     	if (escolhaFinal == 2) {
+    		printf("voltando para o menu\n\n");
     		system("cls");
-    		printf(" voltando para o menu\n\n");
     		menu();
 		}
 		else if (escolhaFinal == 1)	{
+			printf("Reiniciando o jogo\n\n");
 			system("cls");
-			printf(" Reiniciando o jogo\n\n");
     		gousmasWar();
 		}
 		else{
+			printf("Digite um valor valido.\n\n");
+			printf("voltando para o menu\n\n");
 			system("cls");
-			printf(" Digite um valor valido.\n\n");
-			printf(" voltando para o menu\n\n");
     		menu();
 		}
 
